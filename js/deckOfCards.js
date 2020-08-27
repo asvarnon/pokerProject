@@ -1,17 +1,16 @@
 // (function (){
 "use strict";
 
-//TODO: BlackJack: https://www.thatsoftwaredude.com/content/6417/how-to-code-blackjack-using-javascript
-//TODO: pick up from shuffling deck
 
 var suits = ["spades", "hearts", "clubs", "diamonds"];
 var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-let deck = [];
+var deck = [];
 
 
 function getDeck(){
-
     deck = [];
+    // deck array assignment above is most likely used to reset the deck each time
+    // the function is invoked therefore making up and shuffling a new deck
     for (var i = 0; i < suits.length; i++) {
         for (var j = 0; j < values.length; j++) {
             //giving letter cards a weight value
@@ -53,7 +52,28 @@ function shuffle(deck){
 }
 
 
+// TODO: create players. House and myself
 
+let players = [];
+function createPlayer(number){
+    players = [];
+    for(var i = 0; i <= number; i++){
+        var playerName = prompt("Name of Player 1:");
+        if (playerName === "") {
+            alert("Please enter valid name");
+            playerName;
+        }
+        var hand = [];
+        var player = {
+            name: playerName,
+            ID: i,
+            points: 0,
+            Hand: hand
+            //hand is what is in the "Hand Array" which is currently empty
+        };
+        players.push(player);
+    }
+}
 
 
 

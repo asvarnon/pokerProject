@@ -85,7 +85,17 @@ const createPlayersUI = () => {
         var div_hand = document.createElement('div');
         var div_points = document.createElement('div');
 
+        div_points.className = 'points';
+        div_points.id = 'points_' + i;
+        div_player.id = 'player_' + i;
+        div_player.className = 'player';
+        div_hand.id = 'hand_' + i;
 
+        div_playerid.innerHTML = players[i].ID;
+        div_player.appendChild(div_playerid);
+        div_player.appendChild(div_hand);
+        div_player.appendChild(div_points);
+        document.getElementById('players').appendChild(div_player);
     }
 }
 

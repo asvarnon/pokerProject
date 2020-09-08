@@ -7,7 +7,7 @@ var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 var deck = [];
 
 
-function getDeck(){
+const getDeck = () => {
     deck = [];
     // deck array assignment above is most likely used to reset the deck each time
     // the function is invoked therefore making up and shuffling a new deck
@@ -31,7 +31,7 @@ function getDeck(){
 
 //shuffling algorithm courtesy of thatsoftwaredude.
 
-function shuffle(deck){
+const shuffle = (deck) => {
     //for 750 turns
     //switches values of two random different cards
     for (var i = 0; i < 750; i++) {
@@ -52,10 +52,9 @@ function shuffle(deck){
 }
 
 
-// TODO: create players. House and myself
 
 let players = [];
-function createPlayer(number){
+const createPlayer = (number) => {
     players = [];
     for(var i = 0; i <= number; i++){
         var playerName = prompt("Name of Player 1:");
@@ -75,7 +74,20 @@ function createPlayer(number){
     }
 }
 
+//TODO: create player UI
 
+const createPlayersUI = () => {
+    document.getElementById('players').innerHTML = '';
+    for (let player of players) {
+
+        var div_player = document.createElement('div');
+        var div_playerid = document.createElement('div');
+        var div_hand = document.createElement('div');
+        var div_points = document.createElement('div');
+
+
+    }
+}
 
 
 
